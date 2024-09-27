@@ -6,8 +6,18 @@
     <title>viewall</title>
   </head>
   <body>
-    <h1>View Current Expenses</h1>
-    this is where you view all the expenses
+    <h1>Current Expenses</h1>
+    <ul>
+      <% trackers.forEach(tracker => { %>
+      <li>
+        Item:
+        <a href=".expense/<%= tracker._id  %>"> <%= tracker.expense_name %></a
+        ><br />
+        Cost: $<%= tracker.amount %>
+      </li>
+
+      <% }) %>
+    </ul>
 
     <div class="button-container">
       <a href="/" class="button">Home</a>

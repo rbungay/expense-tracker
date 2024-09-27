@@ -31,8 +31,9 @@ app.post("/newexpense", async (req, res) => {
 });
 
 //this renders when someone wants to view all expenses
-app.get("/viewall", (req, res) => {
-  res.render("trackers/viewallexpense.ejs");
+app.get("/viewall", async (req, res) => {
+  const trackers = await Tracker.find({});
+  res.render("trackers/viewallexpense.ejs", { trackers });
 });
 
 app.listen(3000, () => {
