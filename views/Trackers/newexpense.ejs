@@ -9,7 +9,10 @@
     <h1>Submit a new Expense!</h1>
     <form action="/newexpense" method="Post">
       <label for="expense">Expense:</label>
-      <input type="text" name="name" id="name" />
+      <input type="text" name="expense_name" id="expense" />
+      <label for="amount">Amount:</label>
+      <input type="number" name="amount" id="amount" />
+      <button type="submit">Add Expense</button>
     </form>
 
     <div class="button-container">
