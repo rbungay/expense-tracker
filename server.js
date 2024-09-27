@@ -22,7 +22,7 @@ app.get("/newexpense", (req, res) => {
 
 //this renders when someone wants to view all expenses
 app.get("/viewall", (req, res) => {
-  res.render("/trackers/viewallexpense.ejs");
+  res.render("trackers/viewallexpense.ejs");
 });
 
 app.listen(3000, () => {
