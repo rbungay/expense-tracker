@@ -2,9 +2,13 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import Tracker from "./models/tracker.js";
+import morgan from "morgan";
+import methodOverride from "method-override";
 dotenv.config();
 const app = express();
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
 
 mongoose.connect(process.env.MONDODB_URI);
 
