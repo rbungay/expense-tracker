@@ -40,6 +40,11 @@ app.get("/viewall", async (req, res) => {
   res.render("trackers/viewallexpense.ejs", { trackers });
 });
 
+app.get("/expense/:expenseId", async (req, res) => {
+  const foundExpense = await Tracker.findById(req.params.expenseId);
+  res.render("trackers/showexpense.ejs", { expense: foundExpense });
+});
+
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
