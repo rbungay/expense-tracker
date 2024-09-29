@@ -1,11 +1,18 @@
+<!-- views/fruits/show.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title><%= expense.expense_name %></title>
   </head>
   <body>
-    hello there
+    <h1>Expense:</h1>
+    <h2><%= expense.expense_name %></h2>
+    <p>Cost: $<%= expense.amount %></p>
+
+    <!-- Display fruit name -->
+    <!-- Add more details about the fruit here -->
   </body>
 </html>
