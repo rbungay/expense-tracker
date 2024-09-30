@@ -40,9 +40,36 @@ app.get("/viewall", async (req, res) => {
   res.render("trackers/viewallexpense.ejs", { trackers });
 });
 
+//this renders showing the specific expense
 app.get("/expense/:expenseId", async (req, res) => {
   const foundExpense = await Tracker.findById(req.params.expenseId);
   res.render("trackers/showexpense.ejs", { expense: foundExpense });
+});
+
+//renders a way to edit to actual item
+app.get("/expense/:expenseID/edit", async (req, res) => {
+  const foundExpense = await Tracker.findById(req.params.expenseID);
+  res.render("trackers/updateexpense.ejs", { expense: foundExpense });
+});
+
+//as a user i want to create a way where people can update their expense from the expense ID.
+app.put("/expense/:expenseID", async (req, res) => {
+  const { expense_name, amount } = req.body;
+
+  const foundExpense = await Tracker.findByIdAndUpdate(
+    req.params.expenseID,
+    {
+      expense_name,
+      amount,
+    },
+    { new: true }
+  );
+  res.redirect(`/expense/${req.params.expenseID}`);
+});
+
+app.delete("/expense/:expenseID", async (req, res) => {
+  await Tracker.findByIdAndDelete(req.params.expenseID);
+  res.redirect("/");
 });
 
 app.listen(3000, () => {

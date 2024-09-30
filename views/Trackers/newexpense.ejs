@@ -6,6 +6,11 @@
     <title>New Expense!</title>
   </head>
   <body>
+    <div class="button-container">
+      <a href="/" class="button">Home</a>
+      <a href="/viewall" class="button">View Expenses</a>
+    </div>
+
     <h1>Submit a new Expense!</h1>
     <form action="/newexpense" method="Post">
       <label for="expense">Expense:</label>
@@ -14,12 +19,5 @@
       <input type="number" name="amount" id="amount" />
       <button type="submit">Add Expense</button>
     </form>
-
-    <div class="button-container">
-      <a href="/" class="button">Home</a>
-      <a href="/viewall" class="button">View Expenses</a>
-      <a href="update.html" class="button">Update Expense</a>
-      <a href="delete.html" class="button">Delete Expense</a>
-    </div>
   </body>
 </html>

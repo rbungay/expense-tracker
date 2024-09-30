@@ -6,6 +6,10 @@
     <title>viewall</title>
   </head>
   <body>
+    <div class="button-container">
+      <a href="/" class="button">Home</a>
+      <a href="/newexpense" class="button">Add Expense</a>
+    </div>
     <h1>Current Expenses</h1>
     <ul>
       <% trackers.forEach(tracker => { %>
@@ -18,12 +22,5 @@
 
       <% }) %>
     </ul>
-
-    <div class="button-container">
-      <a href="/" class="button">Home</a>
-      <a href="/newexpense" class="button">Add Expense</a>
-      <a href="update.html" class="button">Update Expense</a>
-      <a href="delete.html" class="button">Delete Expense</a>
-    </div>
   </body>
 </html>

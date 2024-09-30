@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Expense!</title>
+  </head>
+  <body>
+    <div class="button-container">
+      <a href="/" class="button">Home</a>
+      <a href="/viewall" class="button">View Expenses</a>
+      <!-- <a href="/updateexpense" class="button">Update Expense</a> -->
+      <a href="delete.html" class="button">Delete Expense</a>
+    </div>
+
+    <h1>Edit new Expense!</h1>
+    <p>Replace <%=expense.expense_name %> with a new Expense!</p>
+    <form action="/expense/<%= expense._id %>?_method=PUT" method="Post">
+      <label for="expense_name">Expense:</label>
+      <input
+        type="text"
+        name="expense_name"
+        id="expense"
+        value="<%= expense.expense_name %>"
+      />
+      <label for="amount">Amount:</label>
+      <input
+        type="number"
+        name="amount"
+        id="amount"
+        value="<%= expense.amount %>"
+      />
+      <button type="submit">Update Expense</button>
+    </form>
+  </body>
+</html>

@@ -1,5 +1,3 @@
-<!-- views/fruits/show.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,14 +6,18 @@
     <title><%= expense.expense_name %></title>
   </head>
   <body>
+    <div class="button-container">
+      <a href="/" class="button">Home</a>
+
+      <a href="/expense/<%= expense._id %>/edit"
+        >Update <%= expense.expense_name %></a
+      >
+    </div>
     <h1>Expense:</h1>
     <h2><%= expense.expense_name %></h2>
     <p>Cost: $<%= expense.amount %></p>
-    <div class="button-container">
-      <a href="/" class="button">Home</a>
-      <a href="/newexpense" class="button">Add Expense</a>
-      <a href="update.html" class="button">Update Expense</a>
-      <a href="delete.html" class="button">Delete Expense</a>
-    </div>
+    <form action="/expense/<%= expense._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Expense</button>
+    </form>
   </body>
 </html>
